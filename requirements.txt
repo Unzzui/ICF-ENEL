@@ -11,3 +11,4 @@ openpyxl==3.0.6
 pyxlsb==1.0.9
 XlsxWriter==3.0.2
 plotly_express==0.4.1
+tk==0.1.0
