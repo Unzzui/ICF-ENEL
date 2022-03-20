@@ -1,7 +1,6 @@
 from csv import writer
 from datetime import date
 from operator import index
-from turtle import color
 from matplotlib.pyplot import text, title
 from scipy.fftpack import ss_diff
 import streamlit as st
