@@ -4,4 +4,4 @@ echo "headless = true"  >> ~/.streamlit/config.toml
 echo "port = $PORT"  >> ~/.streamlit/config.toml
 echo "enableCORS = false"  >> ~/.streamlit/config.toml
 echo "[theme]
-base = light" >> ~/.streamlit/config.toml
+base = light" > ~/.streamlit/config.toml
