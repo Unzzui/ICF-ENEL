@@ -1,13 +1,5 @@
 mkdir -p ~/.streamlit/
-
-echo "[theme]
-primaryColor = ‘#84a3a7’
-backgroundColor = ‘#EFEDE8’
-secondaryBackgroundColor = ‘#fafafa’
-textColor= ‘#424242’
-font = ‘sans serif’
-[server]
-headless = true
-port = $PORT
-enableCORS = false
-" > ~/.streamlit/config.toml
+echo "[server]"  > ~/.streamlit/config.toml 
+echo "headless = true"  >> ~/.streamlit/config.toml
+echo "port = $PORT"  >> ~/.streamlit/config.toml
+echo "enableCORS = false"  >> ~/.streamlit/config.toml
