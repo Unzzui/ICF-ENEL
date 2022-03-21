@@ -52,10 +52,17 @@ def i_seg():
         default = df["Mes"].unique(),
     )
 
+    contractor = st.sidebar.multiselect(
+        "Seleccione el Contratista:",
+        options=df["Contratista"].unique(),
+        default=df["Contratista"].unique(),
+    )
+
+
 
         
     df_selection = df.query(
-        "Año == @year & Mes == @month"
+        "Año == @year & Mes == @month & Contratista == @contractor"
     )
     
     def to_excel(df_selection):
