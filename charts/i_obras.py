@@ -264,7 +264,7 @@ def i_obras():
     total_by_nv = df_selection.loc[df_selection["HAY HALLAZGO"] == "SI"]
     total_by_nv = total_by_nv.groupby(["OT","CONTRATISTA","ITO","TIPO_OBRA"]).size().sort_values(ascending=False)
     total_by_si = df_selection.loc[df_selection["HAY HALLAZGO"] == "SI"]
-    total_by_si = total_by_si.loc[:,["OT","NV/GOM","DIRECCION","ITO","FECHA_INSPECCION","SUPERVISOR","TIPO_TRABAJO","HAY HALLAZGO", "NOMBRE DE INCIDENCIA","HALLAZGO_1","HALLAZGO_2","HALLAZGO_3","HALLAZGO_4","MES","AÑO","TIPO_OBRA"]]
+    total_by_si = total_by_si.loc[:,["OT","NV/GOM","DIRECCION","ITO","FECHA_INSPECCION","SUPERVISOR","TIPO_TRABAJO","HAY HALLAZGO", "NOMBRE DE INCIDENCIA","MES","AÑO","TIPO_OBRA"]]
 
     # ---- Excel Data Loc by "SI"----
 
