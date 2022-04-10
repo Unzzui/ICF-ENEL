@@ -1,17 +1,6 @@
-from cProfile import label
-from calendar import month
 from csv import writer
 from datetime import date
-from json import load
-from lib2to3.pgen2.pgen import DFAState
 from operator import index
-from tkinter.filedialog import LoadFileDialog
-from tkinter.font import names
-from tkinter.tix import Tree
-from turtle import left, right
-from unicodedata import decimal
-from xml.sax import default_parser_list
-from click import option
 from matplotlib.pyplot import text, title
 from scipy.fftpack import ss_diff
 import streamlit as st
