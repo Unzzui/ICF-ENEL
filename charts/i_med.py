@@ -13,6 +13,7 @@ from pyxlsb import open_workbook as open_xlsb
 import plotly_express as px
 
 
+
 def i_med():
     # ----- Start -----
     st.markdown("""
@@ -65,8 +66,24 @@ def i_med():
         "Año == @year & Mes == @month & Contratista == @contractor"
     )
     
+    # ----- Downdload Data -----
+    def to_excel(df_selection):
+        output = BytesIO()
+        writer = pd.ExcelWriter(output, engine="xlsxwriter")
+        df_selection.to_excel(writer,index=False, sheet_name="BD_MA")
+        workbook= writer.book
+        worksheet = writer.sheets["BD_MA"]
+        format1 = workbook.add_format({"num_format" : "0"})
+        worksheet.set_column("A:A", None, format1)
+        writer.save()
+        processed_data = output.getvalue()
+        return processed_data
+
+    today = date.today()
+    today = today.strftime("%d/%m/%Y")
     
-    
+    df_selection_xlsx = to_excel(df_selection)
+    st.download_button(label="📥 Descargar Excel", data=df_selection_xlsx, file_name="BD_MA_" + today + ".xlsx") 
     
     # ---- Data ----
     
@@ -111,7 +128,18 @@ def i_med():
 
     )
     st.plotly_chart(fig_inspection_constructor)
-    st.table(total_inspection_constructor1)
+    
+        
+    button_constructor = st.button("Mostrar Tabla" , key=0)
+
+    if button_constructor == True:
+        st.subheader("Cantidad")
+        st.table(total_inspection_constructor1)
+        button_constructor = st.button("Ocultar Tabla", key=0)
+        
+    else:
+        st.write("")
+    
     
     # ---- Data -----
     
@@ -131,10 +159,48 @@ def i_med():
     )
     st.plotly_chart(fig_supervisor)
     
-    st.table(total_supervisor1)
+    
+    button_supervisor = st.button("Mostrar Tabla" , key=1)
+
+    if button_supervisor == True:
+        st.subheader("Cantidad")
+        st.table(total_supervisor1)
+        button_supervisor = st.button("Ocultar Tabla", key=0)
+        
+    else:
+        st.write("")
+    
     
     
     st.markdown("---")
+    st.subheader("Hallazgos Comunes")
+    st.subheader("""
+                 Segun los datos no se encuentran hallazgos inferior al 100%""")
+    
+    st.markdown("----")
+    
+    # def to_excel(total_finding_data):
+    #     output = BytesIO()
+    #     writer = pd.ExcelWriter(output, engine="xlsxwriter")
+    #     total_finding_data.to_excel(writer, index=False,sheet_name="BD_HALLAZGOS_MA")
+    #     worksheet = writer.sheets["BD_HALLAZGOS_MA"]
+    #     workbook = writer.book
+    #     format1= workbook.add_format({"num_format" : "0"})
+    #     worksheet.set_column("A:A",None, format1)
+    #     writer.save()
+    #     processed_data = output.getvalue()
+    #     return processed_data
+    
+    # total_finding_data_xlsx = to_excel(total_finding_data)
+    
+    st.markdown("""
+    # Descargar BD relacionados a Hallazgos
+    Base de datos ya filtrada por hallazgo, se podra visualizar el detalle presionando el boton a continuación.
+    """)    
+    
+    st.download_button(label="📥 Descargar Excel", data="Nonee",file_name="BD_HALLAZGOS_SEGURIDAD" + today + ".xlsx", disabled=True)
+    
+ 
     
     
     
