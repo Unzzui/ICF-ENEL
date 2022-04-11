@@ -198,7 +198,7 @@ def i_med():
     Base de datos ya filtrada por hallazgo, se podra visualizar el detalle presionando el boton a continuación.
     """)    
     
-    st.download_button(label="📥 Descargar Excel", data="Nonee",file_name="BD_HALLAZGOS_SEGURIDAD" + today + ".xlsx", disabled=True)
+    st.download_button(label="📥 Descargar Excel", data="Nonee",help="No se encuentran Hallazgos para descargar",file_name="BD_HALLAZGOS_SEGURIDAD" + today + ".xlsx", disabled=True)
     
  
     
