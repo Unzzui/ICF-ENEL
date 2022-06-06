@@ -127,7 +127,6 @@ def i_obras():
         x=total_finding_constructor.index.get_level_values(0),
         y="HAY HALLAZGO",
         color=total_finding_constructor.index.get_level_values(0),
-        text_auto=True,
         title="Hallazgos por Contratista",
     )   
 
