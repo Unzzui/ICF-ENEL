@@ -37,7 +37,7 @@ st.image(img_enel_oca, width=400)
 
 report = st.sidebar.selectbox(
     "Seleccione el informe",
-    options=("Informe Calidad de Obras", "Informe de Seguridad", "Informe de Medio Ambiente"),
+    options=("Informe Calidad de Obras", "Informe de Seguridad"),
 
     )
 
@@ -50,6 +50,5 @@ if report == "Informe Calidad de Obras":
 elif report == "Informe de Seguridad":
     i_seg()
     
-elif report == "Informe de Medio Ambiente":
-    i_med()    
+
    
