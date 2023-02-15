@@ -154,15 +154,15 @@ def i_obras():
     
     common_finding = df_selection.groupby(["NOMBRE DE INCIDENCIA"]).count().sort_values(by="OT", ascending=True)
     common_finding_detail = df_selection.groupby(["NOMBRE DE INCIDENCIA"]).size().sort_values(ascending=False)
+    common_finding_top10 = common_finding.nlargest(10, "OT")
 
 
     fig_common_finding = px.pie(
-        common_finding,
-        names=common_finding.index,
+        common_finding_top10,
+        names=common_finding_top10.index,
         values="OT",
-        color=common_finding.index.get_level_values(0),
-        title="Hallazgo Común",
-
+        color=common_finding_top10.index.get_level_values(0),
+        title="Hallazgo Común (Top 10)",
     )
     fig_common_finding.update_layout(
         plot_bgcolor="rgba (0,0,0,0)",
