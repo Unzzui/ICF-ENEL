@@ -86,7 +86,7 @@ def i_obras():
     today = today.strftime("%d/%m/%Y")
 
     df_selection_xlsx = to_excel(df_selection)
-    st.download_button(label="📥 Descargar Excel", data=df_selection_xlsx, file_name="BD_Calidad_Obras" + today + ".xlsx")   
+    st.download_button(label="📥 Descargar Excel", data=df_selection_xlsx, file_name="BD_Calidad_Obras_" + today + ".xlsx")   
 
 
     # ---- MarkDown ---- 

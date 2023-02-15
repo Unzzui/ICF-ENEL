@@ -82,7 +82,7 @@ def i_seg():
     today = today.strftime("%d/%m/%Y")
 
     df_selection_xlsx = to_excel(df_selection)
-    st.download_button(label="📥 Descargar Excel", data=df_selection_xlsx, file_name="BD_SEGURIDAD" + today + ".xlsx")   
+    st.download_button(label="📥 Descargar Excel", data=df_selection_xlsx, file_name="BD_SEGURIDAD_" + today + ".xlsx")   
     
     # ---- Data ---- 
     most_recent_date =  df["Avisos"].max().strftime("%d-%m-%Y")
