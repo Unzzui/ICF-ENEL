@@ -21,7 +21,7 @@ def i_seg():
     
     """)
     
-    @st.cache(ttl=60)
+    @st.cache_data(ttl=60)
     def load_csv_security():
         df = pd.read_csv("data/BD_SEG_FLORIDA.csv", delimiter=";")
         df["Avisos"] = pd.to_datetime(df["Avisos"],infer_datetime_format=True)

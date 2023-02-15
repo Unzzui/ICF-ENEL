@@ -21,7 +21,7 @@ def i_obras():
     )
     # ---- Function ----
 
-    @st.cache(ttl=60)
+    @st.cache_data(ttl=60)
     def load_csv ():
         df = pd.read_csv("data/BD_OBRAS.csv", delimiter=";")
         df["FECHA_INSPECCION"] = pd.to_datetime(df["FECHA_INSPECCION"], infer_datetime_format=True)
