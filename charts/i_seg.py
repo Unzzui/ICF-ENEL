@@ -285,5 +285,5 @@ def i_seg():
     Base de datos ya filtrada por hallazgo, se podra visualizar el detalle presionando el boton a continuación.
     """)    
     
-    st.download_button(label="📥 Descargar Excel", data=total_finding_data_xlsx, file_name="BD_HALLAZGOS_SEGURIDAD" + today + ".xlsx")     
+    st.download_button(label="📥 Descargar Excel", data=total_finding_data_xlsx, file_name="BD_HALLAZGOS_SEGURIDAD_" + today + ".xlsx")     
 
