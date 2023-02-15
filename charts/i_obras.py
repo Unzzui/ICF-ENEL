@@ -286,7 +286,7 @@ def i_obras():
     Base de datos ya filtrada por hallazgo, se podra visualizar el detalle presionando el boton a continuación.
     """)
 
-    st.download_button(label="📥 Descargar Excel", data=df_selection_finding_xlsx, file_name="BD_CALIDAD_HALLAZGOS" + today + ".xlsx")     
+    st.download_button(label="📥 Descargar Excel", data=df_selection_finding_xlsx, file_name="BD_CALIDAD_HALLAZGOS_" + today + ".xlsx")     
 
 
   
