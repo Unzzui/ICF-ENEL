@@ -42,7 +42,7 @@ def i_obras():
     year = st.sidebar.multiselect(
         "Seleccione el Año:",
         options=df["AÑO"].unique(),
-        default=2022
+        default=[2022,2023]
     ) 
     
     
