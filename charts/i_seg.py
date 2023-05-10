@@ -131,7 +131,7 @@ def i_seg():
     if button_evolution_finding == True:
         st.subheader("Evolutivo")
         st.table(finding_evolution1)
-        button_evolution_finding = st.button("Ocultar Tabla", key=0)
+        button_evolution_finding = st.button("Ocultar Tabla", key=1)
         
     else:
         st.write("")
@@ -157,12 +157,12 @@ def i_seg():
     
     
     
-    button_table_total_finding = st.button("Mostrar Tabla" , key=1)
+    button_table_total_finding = st.button("Mostrar Tabla" , key=2)
 
     if button_table_total_finding == True:
         st.subheader("Detalle por Severidad")
         st.table(severity)
-        button_table_total_finding = st.button("Ocultar Tabla", key=1)
+        button_table_total_finding = st.button("Ocultar Tabla", key=3)
         
     else:
         st.write("")
@@ -190,12 +190,12 @@ def i_seg():
     )
     st.plotly_chart(fig_finding_by_constructor)
 
-    button_table_total_contructor = st.button("Mostrar Tabla" , key=2)
+    button_table_total_contructor = st.button("Mostrar Tabla" , key=4)
 
     if button_table_total_contructor == True:
         st.subheader("Detalle por Severidad")
         st.table(total_contractor_finding1)
-        button_table_total_contructor = st.button("Ocultar Tabla", key=2)
+        button_table_total_contructor = st.button("Ocultar Tabla", key=5)
         
     else:
         st.write("")
@@ -220,12 +220,12 @@ def i_seg():
 
     st.plotly_chart(fig_common_finding)
     
-    button_table_common_finding = st.button("Mostrar Tabla" , key=3)
+    button_table_common_finding = st.button("Mostrar Tabla" , key=6)
 
     if button_table_common_finding == True:
         st.subheader("Hallazgos Comunes")
         st.table(common_finding1)
-        button_table_common_finding = st.button("Ocultar Tabla", key=3)
+        button_table_common_finding = st.button("Ocultar Tabla", key=7)
         
     else:
         st.write("")
