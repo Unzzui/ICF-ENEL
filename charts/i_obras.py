@@ -138,7 +138,7 @@ def i_obras():
     st.plotly_chart(fig_constructor_finding)
     
 
-    button_table_total_finding = st.button("Mostrar Tabla" , key=1)
+    button_table_total_finding = st.button("Mostrar Tabla" , key=0)
 
     if button_table_total_finding == True:
         st.subheader("Cuenta Hallazgo SI/NO")
@@ -179,7 +179,7 @@ def i_obras():
     if button_table_common == True:
         st.subheader("Hallazgo mas Común")
         st.table(common_finding_detail)
-        button_table_common = st.button("Ocultar Tabla", key=2)
+        button_table_common = st.button("Ocultar Tabla", key=3)
 
     else:
         st.write("")    
@@ -213,7 +213,7 @@ def i_obras():
     if button_table_fbc == True:
         st.subheader("Hallazgos por Contratista")
         st.table(finding_by_constructor1)
-        button_table_fbc = st.button("Ocultar Tabla", key=4)
+        button_table_fbc = st.button("Ocultar Tabla", key=5)
 
     else:
         st.write("")    
@@ -245,12 +245,12 @@ def i_obras():
     )
     st.plotly_chart(fig_supervisor_total_finding)
 
-    button_supervisor_total = st.button("Mostrar Tabla", key=3)
+    button_supervisor_total = st.button("Mostrar Tabla", key=6)
 
     if button_supervisor_total == True:
         st.subheader("Hallazgos por Supervisor")
         st.table(supervisor_total)
-        button_supervisor_total = st.button("Ocultar Tabla", key=3)
+        button_supervisor_total = st.button("Ocultar Tabla", key=7)
 
     else:
         st.write("")   
