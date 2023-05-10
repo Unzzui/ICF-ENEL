@@ -253,12 +253,12 @@ def i_seg():
     st.plotly_chart(fig_finding_supervisor)
     
     
-    button_table_supervisor_finding = st.button("Mostrar Tabla" , key=4)
+    button_table_supervisor_finding = st.button("Mostrar Tabla" , key=8)
 
     if button_table_supervisor_finding == True:
         st.subheader("Cantidad de Hallazgos por Supervisor")
         st.table(finding_supervisor1)
-        button_table_supervisor_finding = st.button("Ocultar Tabla", key=4)
+        button_table_supervisor_finding = st.button("Ocultar Tabla", key=9)
         
     else:
         st.write("")
