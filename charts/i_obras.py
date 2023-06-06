@@ -95,7 +95,7 @@ def i_obras():
 
     total_inspections = df_selection["OT"].count()
     most_recent_date = df["FECHA_INSPECCION"].max().strftime("%d-%m-%Y")
-    total_finding = df_selection["HAY HALLAZGO"].str.contains("SI").value_counts()[True]
+    total_finding = df_selection["HAY HALLAZGO"].str.contains("SI").value_counts()
     
     # --- Data Total Finding "YES" ---- 
     total_finding_constructor = df_selection.loc[df_selection["HAY HALLAZGO"] == "SI"]
